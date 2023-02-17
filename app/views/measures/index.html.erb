@@ -1,0 +1,5 @@
+
+<%= line_chart @measures_co2.group(:room_name).group_by_hour(:date).sum(:measure_float), colors: ["#FF6663", "#DEB841","#000F08"] %>
+<%= line_chart @measures_voct.group(:room_name).group_by_hour(:date).sum(:measure_float), colors: ["#FF6663", "#DEB841","#000F08"] %>
+<%= line_chart @measures_hum.group(:room_name).group_by_hour(:date).sum(:measure_float), colors: ["#FF6663", "#DEB841","#000F08"] %>
+<%= line_chart @measures_tmp.group(:room_name).group_by_hour(:date).sum(:measure_float), colors: ["#FF6663", "#DEB841","#000F08"] %>
