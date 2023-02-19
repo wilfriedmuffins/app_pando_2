@@ -1,5 +1,45 @@
+<div class="flex flex-col">
+    <div>
+        <%= search_form_for @query do |f| %>
+            <%= f.label :measure_type_cont %>
+            <%= f.search_field :measure_type_cont %>
+            <%= f.label :room_name_cont %>
+            <%= f.search_field :room_name_cont %>
+            <%= f.submit "Search" %>
+        <% end %>
+    </div>
 
-<%= line_chart @measures_co2.group(:room_name).group_by_hour(:date).sum(:measure_float), colors: ["#FF6663", "#DEB841","#000F08"] %>
-<%= line_chart @measures_voct.group(:room_name).group_by_hour(:date).sum(:measure_float), colors: ["#FF6663", "#DEB841","#000F08"] %>
-<%= line_chart @measures_hum.group(:room_name).group_by_hour(:date).sum(:measure_float), colors: ["#FF6663", "#DEB841","#000F08"] %>
-<%= line_chart @measures_tmp.group(:room_name).group_by_hour(:date).sum(:measure_float), colors: ["#FF6663", "#DEB841","#000F08"] %>
+
+<table class="border-collapse border border-slate-500 ">
+  <thead>
+    <tr>
+      <th class="border border-slate-600 ">Measure Type</th>
+      <th class="border border-slate-600 ">Measure Float</th>
+      <th class="border border-slate-600 ">Room Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @measures.each do |measure|%>
+        <tr>
+            <td class="border border-slate-700 "><%= measure.measure_type%></td>
+            <td class="border border-slate-700 "><%= measure.measure_float%></td>
+            <td class="border border-slate-700 "><%= measure.room_name%></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+    <%# <div>
+        <%= line_chart @measures_co2.group(:room_name).group_by_hour(:date).sum(:measure_float), colors: ["#FF6663", "#DEB841","#000F08"] %>
+    <%#</div>
+    <div>
+        <%= line_chart @measures_voct.group(:room_name).group_by_hour(:date).sum(:measure_float), colors: ["#FF6663", "#DEB841","#000F08"] %>
+    <%#</div>
+    <div>
+        <%= line_chart @measures_hum.group(:room_name).group_by_hour(:date).sum(:measure_float), colors: ["#FF6663", "#DEB841","#000F08"] %>
+    <%#</div>
+    <div>
+        <%= line_chart @measures_tmp.group(:room_name).group_by_hour(:date).sum(:measure_float), colors: ["#FF6663", "#DEB841","#000F08"] %>
+   <%# </div> %>
+</div>
