@@ -3,20 +3,20 @@
         <%= search_form_for @query do |f| %>
             <%= f.select :room_name_cont, Measure.pluck(:room_name).uniq, prompt: "- Salles -" %>
             <%= f.select :measure_type_cont, Measure.pluck(:measure_type).uniq, prompt: "- Paramètres -" %>
-            <%= f.submit "Search" %>
+            <%= f.submit "Ajouter Filtre" %>
+            <%= link_to "Suprimer Filtre", measures_path %>
         <% end %>
     </div>
-
     <div>
-        <%= line_chart @measures_co2.group(:room_name).group_by_hour(:date).sum(:measure_float), colors: ["#FF6663", "#DEB841","#000F08"] %>
+        <%= render "chart", obj: @measures_co2 %>
     </div>
     <div>
-        <%= line_chart @measures_voct.group(:room_name).group_by_hour(:date).sum(:measure_float), colors: ["#FF6663", "#DEB841","#000F08"] %>
+        <%= render "chart", obj: @measures_voct %>
     </div>
     <div>
-        <%= line_chart @measures_hum.group(:room_name).group_by_hour(:date).sum(:measure_float), colors: ["#FF6663", "#DEB841","#000F08"] %>
+        <%= render "chart", obj: @measures_hum %>
     </div>
     <div>
-        <%= line_chart @measures_tmp.group(:room_name).group_by_hour(:date).sum(:measure_float), colors: ["#FF6663", "#DEB841","#000F08"] %>
+        <%= render "chart", obj: @measures_tmp %>
     </div>
 </div>
