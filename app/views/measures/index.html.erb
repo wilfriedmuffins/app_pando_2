@@ -1,14 +1,15 @@
-
-<div class="flex flex-col mx-auto">
-    <div class="mx-auto">
-        <%= search_form_for @query do |f| %>
-            <%= f.select :room_name_cont, Measure.pluck(:room_name).uniq, prompt: "- Salles -" %>
-            <%= f.select :measure_type_cont, Measure.pluck(:measure_type).uniq, prompt: "- Paramètres -" %>
-            <%= f.submit "Ajouter Filtre", class:"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" %>
-            <%= link_to "Suprimer Filtre", measures_path, class:"bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" %>
-        <% end %>
+<div class="flex flex-col m-8 space-y-5">
+    <div class="flex justify-around">
+        <div><%= image_tag "svg/logo.svg"%></div>
+        <div>
+            <%= search_form_for @query do |f| %>
+                <%= f.select :room_name_cont, Measure.pluck(:room_name).uniq, prompt: "- Salles -" %>
+                <%= f.select :measure_type_cont, Measure.pluck(:measure_type).uniq, prompt: "- Paramètres -" %>
+                <%= f.submit "Ajouter Filtre", class:"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" %>
+                <%= link_to "Suprimer Filtre", measures_path, class:"bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" %>
+            <% end %>
+        </div>
     </div>
-
     <div>
         <%= render "chart", obj: @measures_co2 %>
     </div>

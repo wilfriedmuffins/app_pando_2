@@ -1,3 +1,8 @@
+<% obj.each_with_index do |type, i| %>
+  <%= title(type.measure_type) %>
+  <% break if i == 0 %>
+<% end %>
+
 <% if obj.any? %>
-    <%= line_chart obj.group(:room_name).group_by_hour(:date).sum(:measure_float), colors: ["#FF6663", "#DEB841","#000F08"] %> 
+  <%= line_chart obj.group(:room_name).group_by_hour(:date).sum(:measure_float),colors: ["#FF6663", "#DEB841","#000F08"] %>
 <% end %>

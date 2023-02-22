@@ -75,3 +75,5 @@ gem "chartkick"
 gem "groupdate"
 gem 'ransack'
 gem "tailwindcss-rails", "~> 2.0"
+
+gem "dockerfile-rails", ">= 1.1", :group => :development
