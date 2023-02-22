@@ -1,25 +1,39 @@
-# README
+# Pando_2 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is a single page which display sensors measurement from a csv file. 
 
-Things you may want to cover:
+#Features
 
-* Ruby version
+* Rails 7
 
-* System dependencies
+* Ruby 3
 
-* Configuration
+* Dockerfile and Docker Compose configuration
 
-* Database creation
+* PostgreSQL database
 
-* Database initialization
+* Ransack
 
-* How to run the test suite
+## Requirements
 
-* Services (job queues, cache servers, search engines, etc.)
+Pleasur sur you are download Docker on your machine
 
-* Deployment instructions
+```bash
+docker compose version
+*Docker Compose version v2.xx.X
+```
 
-* ...
-## display
+
+## Running the Rails app
+
+```bash
+git clone https://github.com/wilfriedmuffins/app_pando_2.git
+cd app_pando_2
+cp .env.example .env
+docker compose build
+```
+
+
+<< brtebtrb >>
+
+{% filename %} cdocker compose build{% endfilename %}
