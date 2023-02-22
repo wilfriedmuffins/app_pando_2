@@ -39,9 +39,5 @@ docker compose up
 to create meausrement from csv file, do this command
 ```bash
 docker compose exec web bin/rails db:seed
+``` 
 
-
-
-<< brtebtrb >>
-
-{% filename %} cdocker compose build{% endfilename %}
