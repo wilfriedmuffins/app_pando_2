@@ -29,9 +29,17 @@ docker compose version
 ```bash
 git clone https://github.com/wilfriedmuffins/app_pando_2.git
 cd app_pando_2
-cp .env.example .env
 docker compose build
 ```
+
+```bach
+docker compose up
+```
+
+to create meausrement from csv file, do this command
+```bash
+docker compose exec web bin/rails db:seed
+
 
 
 << brtebtrb >>
