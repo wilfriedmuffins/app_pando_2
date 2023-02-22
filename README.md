@@ -35,9 +35,12 @@ docker compose build
 ```bach
 docker compose up
 ```
+if there are some errors do ```bash docker compose up``` again to resolve this
 
-to create meausrement from csv file, do this command
+Open a other terminal and to create measurement from csv file, do this command:
+
 ```bash
 docker compose exec web bin/rails db:seed
 ``` 
 
+Application runs on http://0.0.0.0:3000
