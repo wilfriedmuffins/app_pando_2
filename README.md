@@ -43,7 +43,7 @@ Open a other terminal to the same repertoire  create measurement from csv file, 
 docker compose exec web bin/rails db:seed
 ``` 
 
-Application runs on http://0.0.0.0:3000
+Application runs on [http://0.0.0.0:3000](Http://localhost:3000)
 
 Use Ctrl+C to stop
 
