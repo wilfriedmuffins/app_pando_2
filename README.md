@@ -29,11 +29,22 @@ docker compose version
 ```bash
 git clone https://github.com/wilfriedmuffins/app_pando_2.git
 cd app_pando_2
-cp .env.example .env
 docker compose build
 ```
 
+```bach
+docker compose up
+```
+If there are some errors do ``` docker compose up``` again to resolve it
 
-<< brtebtrb >>
+Open a other terminal to the same repertoire  create measurement from csv file, do this command:
 
-{% filename %} cdocker compose build{% endfilename %}
+```bash
+docker compose exec web bin/rails db:seed
+``` 
+
+Application runs on [http://0.0.0.0:3000](Http://localhost:3000)
+
+Use Ctrl+C to stop
+
+
