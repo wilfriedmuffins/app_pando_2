@@ -45,6 +45,6 @@ docker compose exec web bin/rails db:seed
 
 Application runs on http://0.0.0.0:3000
 
-Use Ctrl-C to stop
+Use Ctrl+C to stop
 
 
