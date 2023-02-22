@@ -35,7 +35,7 @@ docker compose build
 ```bach
 docker compose up
 ```
-if there are some errors do ``` docker compose up``` again to resolve this
+If there are some errors do ``` docker compose up``` again to resolve it
 
 Open a other terminal and to create measurement from csv file, do this command:
 
